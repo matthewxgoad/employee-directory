@@ -1,38 +1,29 @@
-
+import React, { useState } from "react";
+import EmployeeInfo from "../employeeInfo/employeeInfo";
+import "./styles.css";
 
 function Table() {
-    return (
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-        </table>
-    )
-
+  return (
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Photo</th>
+          <th scope="col" onClick={sortName}>
+            Name
+          </th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <EmployeeInfo
+          empData={empData}
+          setEmpData={setEmpData}
+          search={props.search}
+        />
+      </tbody>
+    </table>
+  );
 }
 
-export default Table
+export default Table;
