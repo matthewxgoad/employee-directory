@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import EmployeeInfo from "../employeeInfo/employeeInfo";
-import "./styles.css";
+import EmployeeInfo from "../employeeInfo";
+import "./style.css";
 
 function Table() {
   return (
