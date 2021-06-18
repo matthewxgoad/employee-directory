@@ -3,7 +3,9 @@ import './App.css';
 import Employee from './pages/employee'
 function App() {
   return (
-    <Employee />
+    <div className="container">
+      <Employee />
+    </div>
   );
 }
 
