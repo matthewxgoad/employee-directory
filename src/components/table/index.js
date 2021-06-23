@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import EmployeeInfo from "../employeeInfo";
 import "./style.css";
 
-function Table(props) {
+export default function Table() {
+
   const [employeeData, setEmployeeData] = useState([]);
   const [isAscending, setIsAscending] = useState(false);
 
@@ -32,8 +33,37 @@ function Table(props) {
     }
   }
 
+  const employeeList = [
+    {
+      email: 'matthewgoad@gmail.net',
+      first: 'Matthew',
+      last: 'Goad',
+      phone: '9019019011',
+      picture: 'https://randomuser.me/api/portraits/med/women/54.jpg'
+    },
+    {
+      email: 'matthewgoad@gmail.com',
+      first: 'Matthew',
+      last: 'Goad',
+      phone: '9019019011',
+      picture: 'https://randomuser.me/api/portraits/med/women/54.jpg'
+    },
+    {
+      email: 'matthewgoad@yahoo.net',
+      first: 'Matthew',
+      last: 'Goad',
+      phone: '9019019011',
+      picture: 'https://randomuser.me/api/portraits/med/women/54.jpg'
+    }
+  ];
+
+  const [employees] = useState(employeeList);
+  const employeeViews = employees.map(
+    employee => <EmployeeInfo key={employee.email} employee={employee} />
+  )
+
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">Photo</th>
@@ -45,14 +75,8 @@ function Table(props) {
         </tr>
       </thead>
       <tbody>
-        <EmployeeInfo
-          empData={employeeData}
-          setEmpData={setEmployeeData}
-          search={props.search}
-        />
+        {employeeViews}
       </tbody>
     </table>
   );
 }
-
-export default Table;

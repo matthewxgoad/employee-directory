@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Search from "../components/search";
 import Table from "../components/table";
 import Container from "../components/container";
 import Header from "../components/header";
@@ -11,7 +10,6 @@ class Employee extends Component {
         <div>
             <Header />
                 <Container>
-                    <Search />
                     <Table />
                 </Container>
             <Footer />
