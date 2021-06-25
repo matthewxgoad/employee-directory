@@ -1,6 +1,4 @@
 import React from 'react';
-// import React, { useEffect } from "react";
-// import API from "../../utils/API";
 import "./style.css";
 
 const EmployeeInfo = (props) => {
