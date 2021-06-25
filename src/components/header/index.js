@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import Search from "../search"
-import EmployeeList from "../employeeList";
+// import EmployeeList from "../employeeList";
 
 function Header(props) {
     return(
@@ -10,7 +10,7 @@ function Header(props) {
                 <span className="navbar-brand" href="#">Employee Directory</span>
                 <Search 
                     search = {props.search}
-                    setSearch = {props.setSearch}
+                    handleInputChange = {props.handleInputChange}
                 />
             </div>
         </nav>

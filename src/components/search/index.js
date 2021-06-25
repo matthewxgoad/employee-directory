@@ -1,14 +1,17 @@
 import React from 'react';
+import './style.css';
 
-const Search = ({keyword,setKeyword}) => {
-  const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
+function Search ( props ) {
+    const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
   return (
     <input 
      style={BarStyling}
      key="random1"
-     value={keyword}
+     type="search"
+     name="search"
+     value={props.search}
      placeholder={"search employees"}
-     onChange={(e) => setKeyword(e.target.value)}
+     onChange={props.handleInputChange}
     />
   );
 }

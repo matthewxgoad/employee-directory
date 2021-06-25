@@ -1,36 +1,11 @@
-import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-export default function App() {
-  
-const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  
-  useEffect(() => {
-    fetch("https//randomuser.me/api/?inc=name,email,phone,picture&results=20")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw response;
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
-        setError(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
-  if (loading) return "Loading...";
-  if (error) return "Error!";
+const URL = "https://randomuser.me/api/?inc=picture,name,phone,email&results=20";
 
-  return
-  
-  ({
-        first: data.results[0].name.first,
-        last: data.results[0].name.last,
-        email: data.results[0].email,
-        picture: data.results[0].picture.medium,
-        phone: data.results[0].phone
- })
+const getEmployees = {
+  getEmployees: function() {
+    return axios.get(URL);
+  }
+}
+
+  export default getEmployees;

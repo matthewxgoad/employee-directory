@@ -1,20 +1,21 @@
-import React, { useEffect } from "react";
+import React from 'react';
+// import React, { useEffect } from "react";
 // import API from "../../utils/API";
 import "./style.css";
 
-const EmployeeInfo = ({ employee }) => {
-  const { first, last, phone, email, picture } = employee;
+const EmployeeInfo = (props) => {
+   console.log("EmployeeInfo:",props.employee)
 
   return (
-    <tr className="align-middle" key={email}>
+    <tr className="align-middle" key={props.employee.email}>
       <th scope="row">
-        <img src={picture.medium} alt="" />
+        <img src={props.employee.picture.medium} alt="" />
       </th>
       <td>
-        {first} {last}
+        {props.employee.name.first} {props.employee.name.last}
       </td>
-      <td>{phone}</td>
-      <td>{email}</td>
+      <td>{props.employee.phone}</td>
+      <td>{props.employee.email}</td>
     </tr>
   );
 };
