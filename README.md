@@ -17,7 +17,7 @@ This application was built using React to demonstate understanding of using comp
 
 ## Installation Instructions
 
-Application can be accessed online [here](https://employee-directory-mg.herokuapp.com/). 
+Application can be accessed online [here](https://matthewxgoad.github.io/employee-directory/). 
 
 ## Usage
 
